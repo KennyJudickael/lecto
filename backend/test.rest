@@ -1,1 +1,11 @@
 GET http://localhost:5000/api/test
+
+###
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "testuser3",
+    "email": "test3@gmail.com",
+    "password": "123456"
+}
