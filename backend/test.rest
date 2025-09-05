@@ -1,11 +1,23 @@
 GET http://localhost:5000/api/test
 
 ###
-POST http://localhost:5000/api/auth/register
+POST http://localhost:5000/api/auth/signup
 Content-Type: application/json
 
 {
-    "username": "testuser3",
-    "email": "test3@gmail.com",
-    "password": "123456"
+    "username": "kenny",
+    "email": "kenny@gmail.com",
+    "password": "123"
 }
+###
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "kenny@gmail.com",
+    "password": "123"
+}
+
+###
+GET http://localhost:5000/api/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YmE4YTJmZWVmNTI4MWU5ZDAyOGFiMSIsImVtYWlsIjoia2VubnlAZ21haWwuY29tIiwiaWF0IjoxNzU3MDYyOTQ1LCJleHAiOjE3NTcwNjY1NDV9.8p9CkNXXSfzwtsF3t6OgPjqzxQ4Lj2mItczYauDV-6c
