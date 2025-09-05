@@ -3,8 +3,10 @@ import dotenv from 'dotenv'
 import express from 'express'
 import mongoose from 'mongoose'
 import authRoutes from './routes/auth.js'
+import bookRoutes from './routes/book.js'
 
 dotenv.config()
+
 const app = express()
 
 app.use(cors())
@@ -24,6 +26,7 @@ app.get('/api/test', (req, res) => {
 })
 
 app.use('/api/auth', authRoutes)
+app.use('/api/books', bookRoutes)
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => console.log(`Server runnning on port ${PORT}`))

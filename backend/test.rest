@@ -20,4 +20,20 @@ Content-Type: application/json
 
 ###
 GET http://localhost:5000/api/auth/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YmE4YTJmZWVmNTI4MWU5ZDAyOGFiMSIsImVtYWlsIjoia2VubnlAZ21haWwuY29tIiwiaWF0IjoxNzU3MDYyOTQ1LCJleHAiOjE3NTcwNjY1NDV9.8p9CkNXXSfzwtsF3t6OgPjqzxQ4Lj2mItczYauDV-6c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YmE4YTJmZWVmNTI4MWU5ZDAyOGFiMSIsImVtYWlsIjoia2VubnlAZ21haWwuY29tIiwiaWF0IjoxNzU3MDc4NDEzLCJleHAiOjE3NTcwODIwMTN9.1-XhVr9NeGxtmT5DVbGWo70BUyTR0S-ZId6gWB0hjYQ
+
+
+###
+POST http://localhost:5000/api/books
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YmE4YTJmZWVmNTI4MWU5ZDAyOGFiMSIsImVtYWlsIjoia2VubnlAZ21haWwuY29tIiwiaWF0IjoxNzU3MDgzOTE2LCJleHAiOjE3NTcwODc1MTZ9.7AGQo6f_ebc8iz90WH12OC0gnWU_Ghi-CrkFEsjcjsw
+
+{
+  "title": "Clean Code",
+  "author": "Robert C. Martin",
+  "description": "Un classique sur les bonnes pratiques"
+}
+
+###
+GET http://localhost:5000/api/books
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YmE4YTJmZWVmNTI4MWU5ZDAyOGFiMSIsImVtYWlsIjoia2VubnlAZ21haWwuY29tIiwiaWF0IjoxNzU3MDgzOTE2LCJleHAiOjE3NTcwODc1MTZ9.7AGQo6f_ebc8iz90WH12OC0gnWU_Ghi-CrkFEsjcjsw
