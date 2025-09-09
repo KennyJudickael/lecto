@@ -7,5 +7,9 @@ const userSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now }
 })
 
+userSchema.path('password').validate(function (value) {
+  return value.length >= 8
+}, 'Password must be at least 8 characters long')
+
 const User = mongoose.models.User || mongoose.model('User', userSchema)
 export default User

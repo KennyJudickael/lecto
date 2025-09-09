@@ -1,12 +1,28 @@
 import bcrypt from 'bcryptjs'
 import express from 'express'
+import rateLimit from 'express-rate-limit'
+import Joi from 'joi'
 import jwt from 'jsonwebtoken'
 import { authMiddlware } from '../middleware/authMiddleware.js'
 import User from '../models/User.js'
 
 const router = express.Router()
 
+const signupSchema = Joi.object({
+  username: Joi.string().min(3).required(),
+  email: Joi.string().email().required(),
+  password: Joi.string().min(8).required()
+})
+
+const loginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, //15 minutes
+  max: 5, // 5 tentatives
+  message: 'Too many login attemps, please try again later'
+})
+
 router.post('/signup', async (req, res) => {
+  const { error } = signupSchema.validate(req.body)
+  if (error) return res.status(400).json({ message: error.details[0].message })
   try {
     const { username, email, password } = req.body
 
@@ -28,7 +44,7 @@ router.post('/signup', async (req, res) => {
   }
 })
 
-router.post('/login', async (req, res) => {
+router.post('/login', loginLimiter, async (req, res) => {
   try {
     const { email, password } = req.body
 
@@ -43,7 +59,7 @@ router.post('/login', async (req, res) => {
     // Génération du token JWT
     const token = jwt.sign(
       { id: user._id, email: user.email },
-      process.env.JWT_SECRET || 'secret123',
+      process.env.JWT_SECRET,
       { expiresIn: '1h' }
     )
 

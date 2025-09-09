@@ -1,53 +1,21 @@
 ```
 └── 📁book
-    └── 📁backend
+            └── 📁backend
+        └── 📁middleware
+            ├── authMiddleware.js
         └── 📁models
+            ├── Book.js
             ├── User.js
         └── 📁routes
             ├── auth.js
+            ├── book.js
+        └── 📁uploads
         ├── .env
         ├── index.js
         ├── package-lock.json
         ├── package.json
         ├── test.rest
     └── 📁frontend
-            └── 📁build
-            └── 📁cache
-                ├── .rscinfo
-                ├── next-devtools-config.json
-            └── 📁server
-                └── 📁app
-                    └── 📁favicon.ico
-                        └── 📁route
-                            ├── app-build-manifest.json
-                            ├── app-paths-manifest.json
-                            ├── build-manifest.json
-                        ├── route.js
-                        ├── route.js.map
-                    └── 📁page
-                        ├── app-build-manifest.json
-                        ├── app-paths-manifest.json
-                        ├── build-manifest.json
-                        ├── next-font-manifest.json
-                        ├── react-loadable-manifest.json
-                        ├── server-reference-manifest.json
-                    ├── page_client-reference-manifest.js
-                    ├── page.js
-                    ├── page.js.map
-                └── 📁chunks
-            └── 📁static
-            └── 📁types
-                ├── routes.d.ts
-                ├── validator.ts
-            ├── app-build-manifest.json
-            ├── build-manifest.json
-            ├── fallback-build-manifest.json
-            ├── package.json
-            ├── postcss.js
-            ├── postcss.js.map
-            ├── prerender-manifest.json
-            ├── routes-manifest.json
-            ├── trace
         └── 📁app
             ├── favicon.ico
             ├── globals.css
@@ -68,5 +36,6 @@
         ├── postcss.config.mjs
         ├── README.md
         ├── tsconfig.json
-    └── .gitignore
+    ├── .gitignore
+    └── structure.md
 ```

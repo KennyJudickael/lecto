@@ -23,8 +23,14 @@ router.post('/', authMiddlware, async (req, res) => {
 
 router.get('/', authMiddlware, async (req, res) => {
   try {
-    const books = await Book.find({ user: req.user.id })
-    res.json(books)
+    const page = parseInt(req.query.page) || 1
+    const limit = parseInt(req.query.limit) || 10
+    const skip = (page - 1) * limit
+
+    const books = await Book.find({ user: req.user.id }).skip(skip).limit(limit)
+    const total = await Book.countDocuments({ user: req.user.id })
+
+    res.json({ books, total, page, limit })
   } catch (error) {
     console.error(error)
     res.status(500).json({ message: 'Server error' })

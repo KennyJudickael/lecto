@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken'
 
 export const authMiddlware = (req, res, next) => {
-  const authHeader = req.headers['authorization']
+  const authHeader = req.get('Authorization')
   const token = authHeader && authHeader.split(' ')[1]
 
   if (!token) return res.status(401).json({ message: 'missing token' })
@@ -11,7 +11,9 @@ export const authMiddlware = (req, res, next) => {
     req.user = decoded
     next()
   } catch (error) {
-    console.error(error)
-    res.status(403).json({ message: 'Expired token' })
+    if (error.name === 'TokenExpiredError') {
+      res.status(403).json({ message: 'Expired token' })
+    }
+    return res.status(403).json({ message: 'Invalid token' })
   }
 }

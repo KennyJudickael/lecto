@@ -5,9 +5,9 @@ POST http://localhost:5000/api/auth/signup
 Content-Type: application/json
 
 {
-    "username": "kenny",
-    "email": "kenny@gmail.com",
-    "password": "123"
+    "username": "bob2",
+    "email": "bob2@gmail.com",
+    "password": "123456789"
 }
 ###
 POST http://localhost:5000/api/auth/login
@@ -20,20 +20,20 @@ Content-Type: application/json
 
 ###
 GET http://localhost:5000/api/auth/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YmE4YTJmZWVmNTI4MWU5ZDAyOGFiMSIsImVtYWlsIjoia2VubnlAZ21haWwuY29tIiwiaWF0IjoxNzU3MDc4NDEzLCJleHAiOjE3NTcwODIwMTN9.1-XhVr9NeGxtmT5DVbGWo70BUyTR0S-ZId6gWB0hjYQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YmE4YTJmZWVmNTI4MWU5ZDAyOGFiMSIsImVtYWlsIjoia2VubnlAZ21haWwuY29tIiwiaWF0IjoxNzU3NDA3MTIzLCJleHAiOjE3NTc0MTA3MjN9.hzNvx5bPeDyMVsxPFbOldXD5_v4fC8eCx6nLT7rbkfs
 
 
 ###
 POST http://localhost:5000/api/books
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YmE4YTJmZWVmNTI4MWU5ZDAyOGFiMSIsImVtYWlsIjoia2VubnlAZ21haWwuY29tIiwiaWF0IjoxNzU3MDgzOTE2LCJleHAiOjE3NTcwODc1MTZ9.7AGQo6f_ebc8iz90WH12OC0gnWU_Ghi-CrkFEsjcjsw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YmE4YTJmZWVmNTI4MWU5ZDAyOGFiMSIsImVtYWlsIjoia2VubnlAZ21haWwuY29tIiwiaWF0IjoxNzU3NDA3MTIzLCJleHAiOjE3NTc0MTA3MjN9.hzNvx5bPeDyMVsxPFbOldXD5_v4fC8eCx6nLT7rbkfs
 
 {
-  "title": "Clean Code",
-  "author": "Robert C. Martin",
+  "title": "Javascript 2",
+  "author": "Robert Bob",
   "description": "Un classique sur les bonnes pratiques"
 }
 
 ###
 GET http://localhost:5000/api/books
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YmE4YTJmZWVmNTI4MWU5ZDAyOGFiMSIsImVtYWlsIjoia2VubnlAZ21haWwuY29tIiwiaWF0IjoxNzU3MDgzOTE2LCJleHAiOjE3NTcwODc1MTZ9.7AGQo6f_ebc8iz90WH12OC0gnWU_Ghi-CrkFEsjcjsw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YmE4YTJmZWVmNTI4MWU5ZDAyOGFiMSIsImVtYWlsIjoia2VubnlAZ21haWwuY29tIiwiaWF0IjoxNzU3NDA3MTIzLCJleHAiOjE3NTc0MTA3MjN9.hzNvx5bPeDyMVsxPFbOldXD5_v4fC8eCx6nLT7rbkfs
